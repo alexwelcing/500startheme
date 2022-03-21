@@ -1,0 +1,22 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+        {{#post}}
+            <article class="{{post_class}} single">
+                {{> post-header tag="h1" show_meta=true single=true}}
+                {{> post-media same_height=false with_caption=true}}
+                <div class="post-content gh-content kg-canvas">
+                    {{content}}
+                </div>
+                {{#if @custom.show_tags}}
+                    {{> post-tags}}
+                {{/if}}
+            </article>
+        {{/post}}
+        {{#if @custom.show_related_posts}}
+            {{> related}}
+        {{/if}}
+        {{> comment}}
+    </main>
+</div>
